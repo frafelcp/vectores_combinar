@@ -7,9 +7,15 @@ package vectCombinar;
 
 import java.util.Scanner;
 
-//Leer por teclado dos vectores de 10 numeros enteros cada uno
-//combinar los dos vectores en un tercer vector de la 
-//forma 1 de a , 1 de b, 2 de a, 2 de b
+//Realizar un algoritmo que lea una secuencia de 10 números como máximo y 
+//los almacene en una estructura de tipo vector. El algoritmo debe devolver 
+//el vector inverso.
+//
+//Ejemplo:
+//V = { 8, 4, 2, 6, 0, 1, 7, 6, 6, 5 }
+//Inverso:
+//VI= { 5, 6, 6, 7, 1, 0, 6, 2, 4, 8 }
+
 
 /**
  *
@@ -24,7 +30,6 @@ public class vectCombinar {
         int [] a;
         int [] b;
         int numElem;
-        int [] c;
         
         System.out.println("COMBINACION DE DOS VECTORES");
         System.out.println("------------------------------");
@@ -37,7 +42,6 @@ public class vectCombinar {
         //damos tamaño a los vectores
         a = new int[numElem];
         b = new int[numElem];
-        c = new int[numElem*2];
         
         System.out.println("------------------------------");
         
@@ -50,46 +54,27 @@ public class vectCombinar {
         
         System.out.println("------------------------------");
         
-        //llenamos el vector b
-        System.out.println("Llenado del vector b");
-        for (int i = 0; i < b.length; i++) {
-            System.out.println((i+1)+".Ingrese un numero");
-            b[i] = entrada.nextInt();
-        }
-        
-        System.out.println("------------------------------");
-        
         //imprimimos el vector a
         System.out.println("El vector a es");
         for (int i = 0; i < a.length; i++) {
             System.out.println(a[i]);
         }
         
-        System.out.println("------------------------------");
-        
-        //imprimimos el vector b
-        System.out.print("El vector b es");
-        for (int i = 0; i < b.length; i++) {
-            System.out.println(b[i]);
-        }
-        
-        //combinamos el vector a y b en el vector c
-        //i para a y b
-        //j para c
+        //pasamos el vector a al b
+        //i para a
+        //j para b
         int j = 0;
-        for (int i = 0; i < 5; i++) {
-            c[j] = a[i];
-            j++;
-            c[j] = b[i];
+        for (int i = 0; i < numElem; i++) {
+            b[j] = a[i];
             j++;
         }       
                 
         System.out.println("------------------------------");
         
-        //imprimimos el vector c
-        System.out.println("El vector c es:");
-        for (int i = 0; i < c.length; i++) {
-            System.out.println(c[i]);
+        //imprimimos el vector b
+        System.out.println("El vector b es:");
+        for (int i = (b.length - 1); i >= 0; i--) {
+            System.out.println(b[i]);
         }
         
         System.out.println();
