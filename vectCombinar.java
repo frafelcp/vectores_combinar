@@ -72,9 +72,8 @@ public class vectCombinar {
         System.out.println("------------------------------");
         
         //imprimimos el vector b
-        System.out.println("El vector b es:");
-        for (int i = (b.length - 1); i >= 0; i--) {
-            System.out.println(b[i]);
+        for (int i = 0; i < numElem; i++) {
+            System.out.println(b[numElem - i - 1]);
         }
         
         System.out.println();
